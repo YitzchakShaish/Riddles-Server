@@ -1,19 +1,38 @@
 [
   {
-    "id": "1",
-    "question": "5 * 5"
+    "name": "math",
+    "taskDescription": "3/3",
+    "correctAnswer": "1",
+    "id": 5
   },
   {
-    "id": "2",
-    "question": "9 * 5"
+    "name": "math",
+    "taskDescription": "2^5",
+    "correctAnswer": "32",
+    "id": 6
   },
   {
-    "id": "3",
-    "question": "9 * 5"
+    "name": "math",
+    "taskDescription": "2*22+2",
+    "correctAnswer": "46",
+    "id": 7
   },
   {
-    "question": "9 * 5",
-    "correctAnswers": "45",
-    "id": "4"
+    "name": "�������",
+    "taskDescription": "2+3+2",
+    "correctAnswer": "7",
+    "id": 8
+  },
+  {
+    "name": "juish",
+    "taskDescription": "who was the the second leader of am-israel?",
+    "correctAnswer": "yeoshua",
+    "id": 9
+  },
+  {
+    "name": "math",
+    "taskDescription": "2*8*1",
+    "correctAnswer": "16",
+    "id": 10
   }
 ]
