@@ -2,8 +2,8 @@ import { question } from "readline-sync";
 import chalk from 'chalk';
 
 
-class Riddele {
-    constructor(id, name, riddeleStarts, taskDescription, correctAnswer) {
+class Riddle {
+    constructor({id, name, taskDescription, correctAnswer}) {
         this.id = id;
         this.name = name;
         this.taskDescription = taskDescription;
@@ -31,4 +31,4 @@ class Riddele {
 
 
 
-export { Riddele };
+export {Riddle} ;
