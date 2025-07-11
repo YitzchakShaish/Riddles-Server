@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-     "start": "node --watch app"
+    "start": "node --watch app"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "express": "^5.1.0",
+    "json-file-crud": "^1.2.0"
+  }
 }
