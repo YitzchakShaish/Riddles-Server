@@ -1,14 +1,14 @@
 
 export async function getRiddles() {
-    const response = await fetch("http://localhost:3000/riddles");
-    const riddles = await response.json();
+    const riddles = await fetch("http://localhost:3000/riddles");
+    //const riddles = await response.json();
     //console.log("Show all riddles:", riddles);
    return riddles;
    
 }
 export async function getRiddleById(id) {
-    const response = await fetch(`http://localhost:3000/riddles/${id}`);
-    const riddle = await response.json();
+    const riddle = await fetch(`http://localhost:3000/riddles/${id}`);
+    //const riddle = await response.json();
     //console.log("Show riddle by id: "+id, riddle);
    return riddle;
    
@@ -53,3 +53,5 @@ export async function deleteRiddle(id) {
 // addRiddle("math", "2^5", "32")
 // //getRiddleById(3);
 // deleteRiddle(2)
+// const r = await getRiddles()
+// console.log(r);
