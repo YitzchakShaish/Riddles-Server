@@ -9,9 +9,11 @@ router.get('/:id', riddlesCtrl.getRiddleById);
 
 router.post('/addRiddle', riddlesCtrl.addRiddle)
 
-router.put('/update/:id', riddlesCtrl.updateRiddleById);
+router.post('/load-initial-riddles', riddlesCtrl.loadInitialRiddles);
 
-router.delete('/delete/:id', riddlesCtrl.deleteRiddleById);
+router.put('/:id', riddlesCtrl.updateRiddleById);
+
+router.delete('/:id', riddlesCtrl.deleteRiddleById);
 
 
 export default router;

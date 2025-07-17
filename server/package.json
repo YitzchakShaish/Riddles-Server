@@ -11,7 +11,9 @@
   "description": "",
   "type": "module",
   "dependencies": {
+    "dotenv": "^17.2.0",
     "express": "^5.1.0",
-    "json-file-crud": "^1.2.0"
+    "json-file-crud": "^1.2.0",
+    "mongodb": "^6.17.0"
   }
 }
