@@ -7,6 +7,8 @@ export async function playRiddleGame(player) {
 
   try {
     const riddles = await getRiddles();
+    console.log("Retrieved Riddles:", riddles);
+    
     const builtRiddles = buildRiddlesFromData(riddles);
 
     for (const riddle of builtRiddles) {
