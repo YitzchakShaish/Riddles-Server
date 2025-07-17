@@ -19,20 +19,20 @@ The project also includes a minimal **HTML/JS client** for interacting with the 
 
 ## API Endpoints
 
-- `GET /api/riddles`  
+- `GET /riddles`  
     Returns all riddles.
 
-- `GET /api/riddles/:id`  
+- `GET /riddles/:id`  
     Returns a specific riddle by ID.
 
-- `POST /api/riddles`  
+- `POST /api/riddles/addRiddle`  
     Adds a new riddle. Expects JSON body:  
     `{ "question": "...", "answer": "..." }`
 
-- `PUT /api/riddles/:id`  
+- `PUT /riddles/:id`  
     Updates a riddle by ID. Expects JSON body.
 
-- `DELETE /api/riddles/:id`  
+- `DELETE /riddles/:id`  
     Deletes a riddle by ID.
 
 ---
