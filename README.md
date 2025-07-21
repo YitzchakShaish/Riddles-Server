@@ -37,9 +37,22 @@ The project also includes a minimal **HTML/JS client** for interacting with the 
 
 ---
 
-## Running the Server
+
+## Running the Project
 
 1. Make sure **Node.js** and **MongoDB** are installed and running.
+
 2. In the project directory, install dependencies:
    ```bash
    npm install
+   ```
+
+3. To start the Express server, run:
+   ```bash
+   node server/app.js
+   ```
+
+4. To start the CLI client (Riddle Game), run:
+   ```bash
+   node client/app.js
+   ```
