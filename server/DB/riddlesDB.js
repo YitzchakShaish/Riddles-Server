@@ -3,7 +3,7 @@ import { config } from 'dotenv';
 
 config();
 console.log(process.env.URI);
-const uri = process.env.URI || "mongodb+srv://y350380350:T60XOkCeZYQ29G0c@cluster0.vc13nyb.mongodb.net";
+const uri = process.env.URI 
 
 
 // Create a new MongoClient
