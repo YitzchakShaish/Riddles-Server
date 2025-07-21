@@ -1,4 +1,4 @@
-import { connectToDatabase } from "../DB/mongodb.js";
+import { connectToDatabase } from "../DB/riddlesDB.js";
 import { ObjectId } from "mongodb";
 
 
