@@ -1,6 +1,6 @@
 
-import { createRiddle, readAllRiddles, readRiddle, updateRiddle, deleteRiddle } from "../DAL/riddlesDAL.js";
-import { getRiddleByIdFDB, getAllRiddlesFDB, insertNewRiddleTDB, insertManyNewRiddlesTDB, updateRiddleTDB ,deleteRiddleFDB} from "../DAL/riddlesDalMongodb.js";   
+import { createRiddle, readAllRiddles, readRiddle, updateRiddle, deleteRiddle } from "../temp/riddlesDAL.js";
+import { getRiddleByIdFDB, getAllRiddlesFDB, insertNewRiddleTDB, insertManyNewRiddlesTDB, updateRiddleTDB ,deleteRiddleFDB} from  "../temp/riddlesDalMongodb.js"
 
 
 
