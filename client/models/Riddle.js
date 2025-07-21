@@ -3,8 +3,8 @@ import chalk from 'chalk';
 
 
 class Riddle {
-    constructor({id, name, taskDescription, correctAnswer}) {
-        this.id = id;
+    constructor({_id, name, taskDescription, correctAnswer}) {
+        this.id = _id;
         this.name = name;
         this.taskDescription = taskDescription;
         this.correctAnswer = correctAnswer;

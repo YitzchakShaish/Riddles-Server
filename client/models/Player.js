@@ -17,6 +17,7 @@ class Player {
   const average = total / this.times.length;
   console.log(chalk.bold.magenta(`Total time: ${Math.round(total / 1000)} seconds`));
   console.log(chalk.bgMagenta.white(`Average per riddle: ${Math.round(average / 1000)} seconds`));
+  return Math.round(Number(average/1000));
 }
 showPlayer(){
     console.log(`name: ${this.name}, Player score: ${this.playerScore}` );
