@@ -1,4 +1,4 @@
-import {  findPlayerIdByUsername, createPlayer, updateTotalGamesTDB, updateBestAvgTimeTDB, getAllPlayersFDB, getPlayerByIdFDB, getTop5PlayersFDB, getBestAvgTimeFDB } from "../temp/playersDAL.js";
+import {  findPlayerIdByUsername, createPlayer, updateTotalGamesTDB, updateBestAvgTimeTDB, getAllPlayersFDB, getPlayerByIdFDB, getTop5PlayersFDB, getBestAvgTimeFDB } from "../DAL/playersDAL.js";
 
 
 export const getAllPlayers = async (req, res) => {
