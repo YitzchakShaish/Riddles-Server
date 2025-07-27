@@ -1,5 +1,6 @@
 import express from "express";
 import { getOrCreatePlayer, getTop5Players, updateBestAvgTime , getAllPlayers, incrementTotalGames, getPlayerById} from "../controllers/playersCtrl.js";
+import { authorizeRoles, verifyToken } from "../middlewares/authMiddlewares.js";
 const router = express.Router();
 //POST login
 router.post('/', getOrCreatePlayer)
@@ -10,7 +11,7 @@ router.post('/', getOrCreatePlayer)
 router.get('/', getAllPlayers);
 
 //GET 5
-router.get('/top', getTop5Players);
+router.get('/top',verifyToken, authorizeRoles('admin'), getTop5Players);
 
 router.get('/:id', getPlayerById);
 

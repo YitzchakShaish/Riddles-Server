@@ -33,7 +33,7 @@ export const updateBestAvgTime = async (req, res) => {
     const contemporaryTime = req.body.best_avg_time;
 
     // Validate ID
-    if (!id || isNaN(Number(id))) {
+    if (!id ) {
         return res.status(400).json({ message: 'Invalid or missing user ID.' });
     }
 
@@ -74,20 +74,31 @@ export const getTop5Players = async (req, res) => {
 
 export const incrementTotalGames = async (req, res) => {
     const id = req.params.id;
+
     // Validate ID
     if (!id || isNaN(Number(id))) {
         return res.status(400).json({ message: 'Invalid or missing user ID.' });
     }
 
-    // Update in DB
+    // Try to update in DB
     const result = await updateTotalGamesTDB(id);
 
-    if (!result.success) {
-        return res.status(404).json({ message: 'player not found.' });
+    if (result.error) {
+        
+        if (result.error.includes('not found')) {
+            return res.status(404).json({ message: 'Player not found.' });
+        }
+        return res.status(500).json({ message: 'Server error.', error: result.error });
     }
 
-    res.json({ message: 'total games update successfully.', player: result.data });
-}
+
+    return res.status(200).json({
+        success: true,
+        message: 'Total games updated successfully.',
+        total_games: result.total_games,
+    });
+};
+
 
 export const getOrCreatePlayer = async (req, res) => {
     const { username } = req.body;

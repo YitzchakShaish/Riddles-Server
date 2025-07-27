@@ -2,7 +2,7 @@ import { MongoClient } from 'mongodb';
 import { config } from 'dotenv';
 
 config();
-console.log(process.env.URI);
+//console.log(process.env.URI);
 const uri = process.env.URI 
 
 

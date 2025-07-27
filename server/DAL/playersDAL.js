@@ -18,13 +18,27 @@ export async function findPlayerIdByUsername(username) {
     
 }
 
-
-
-
-export async function createPlayer(username) {
+export async function findPlayerByUsername(username) {
     const { data, error } = await supabase
         .from('players')
-        .insert([{ username: username }])
+        .select('*')
+        .eq('username', username)
+        .single();
+
+    if (error) {
+         return { success: false, player: null };
+    }
+
+    return { success: true,  playerId: data.id, username, role: data.role, password_hash: data.password_hash};
+    
+}
+
+
+
+export async function createPlayer(username, passwordHash, role = 'user') {
+    const { data, error } = await supabase
+        .from('players')
+        .insert([{ username: username, password_hash: passwordHash, role: role }])
         .select('id')
         .single();
 
@@ -32,7 +46,7 @@ export async function createPlayer(username) {
        return { success: false, playerId: null };
     }
 
-    return { success: true, playerId: data.id };
+    return { success: true, playerId: data.id, username, role };
 }
 
 
@@ -64,16 +78,32 @@ export async function getBestAvgTimeFDB(playerId) {
 
 
 export async function updateTotalGamesTDB(playerId) {
-    const { data, error }=  await supabase
-    .from('players')
-    .update({ total_games: currentTotalGames + 1 })
-    .eq('id', playerId);
-     if (error) {
-        return { success: false};
+    // Fetch the current total_games value
+    const { data, err } = await supabase
+        .from('players')
+        .select('total_games')
+        .eq('id', playerId)
+        .single(); 
+
+    if (err) {
+        return { success: false, error: err.message };
     }
 
-    return { success: true };
+    // add 1 to the current total_games
+    const currentTotalGames = data.total_games;
+    const { error } = await supabase
+        .from('players')
+        .update({ total_games: currentTotalGames + 1 }) 
+        .eq('id', playerId);
+
+    if (error) {
+        return { success: false, error: error.message };
+    }
+ // Return the updated total_games
+    return { success: true, total_games: currentTotalGames + 1 };
 }
+
+
 
 export async function getAllPlayersFDB() {
     const { data, error } = await supabase
