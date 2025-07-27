@@ -6,7 +6,7 @@ import {
   getRiddles,
   getRiddleById
 } from '../api/riddlesApi.js';
-import { buildRiddlesFromData } from './riddleBuilder.js';
+import { buildRiddlesFromData } from '../utils/riddleBuilder.js';
 
 // Ask user for riddle details and create a new one
 export async function promptAndCreateRiddle() {
