@@ -1,5 +1,5 @@
 import { question } from 'readline-sync';
-import { handleLogin, handleSignup } from '../auth/authFlow.js';
+import { handleLogin, handleSignup } from '../ui/authUi.js';
 import {
   promptAndCreateRiddle,
   promptAndDeleteRiddle,
@@ -10,6 +10,7 @@ import { getTop5Players } from '../api/playersApi.js';
 import { waitForEnter } from '../utils/wait.js';
 import { playRiddleGame } from './playRiddleGame.js';
 import chalk from 'chalk';
+import { logout } from '../api/authApi.js';
 
 export async function handleInitialMenu(choice) {
   if (choice === '1') {
@@ -27,6 +28,8 @@ export async function handleInitialMenu(choice) {
     return { playerId: null, role: 'guest', name }; // guest mode
   }
   if (choice === '0') {
+    const result = await logout();
+    console.log(result.message);
     console.log('Goodbye!');
     return null;
   }
@@ -83,6 +86,9 @@ export async function handleMenuChoice(choice, player, playerId, role) {
       break;
 
     case '0':
+      const result = await logout();
+      console.log(result.message);
+
       return false;
 
     default:

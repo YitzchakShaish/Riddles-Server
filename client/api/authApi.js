@@ -47,7 +47,30 @@ export async function login(username, password) {
   }
 }
 
-
+export async function logout() {
+  const res = await fetch("http://localhost:3000/logout", {
+    method: 'POST',
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+     
+    })
+  });
+const data = await res.json(); 
+ if (res.ok) {
+    token = data.token
+    console.log(`token`, token  );
+     // Clear the token on logout
+    return {
+      status: res.status,
+      message: data.message || 'Logout succeeded'
+    };
+  } else {  
+    return {
+      status: res.status,
+      message: data.message || 'Logout failed'
+    };
+  }
+}
 // const data = await login("m8di", "1234");
 // token = data.token;
 // console.log(`data`, data);

@@ -23,7 +23,7 @@ export async function playRiddleGame(player, playerId, role) {
       player.recordTime(start, end);
       console.log(`Time: ${(end - start) / 1000} seconds\n`);
     }
-    if (role ==='guest'){
+    if (role === 'guest') {
       console.log("You played as a guest. No stats will be saved.");
       return
     }
@@ -46,7 +46,7 @@ export async function playRiddleGame(player, playerId, role) {
     console.error("Failed to play game:", error.message);
   }
   const games = await updateSumGames(playerId);
-  
+
   if (games.success) {
     console.log("Total games played updated successfully.");
     console.log(chalk.green(`Your total games is: ${games.total_games}`));

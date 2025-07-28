@@ -6,7 +6,7 @@ import Player from '../models/Player.js';
 import { showInitialMenu, showMenu } from '../ui/displayRiddle.js';
 //import { waitForEnter } from '../utils/wait.js';
 
-import { handleLogin } from '../auth/authFlow.js';
+import { handleLogin } from '../ui/authUi.js';
 import { handleInitialMenu, handleMenuChoice } from './menuHandlers.js';
 
 export async function runRiddleGame() {

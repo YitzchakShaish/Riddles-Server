@@ -1,6 +1,6 @@
 import express from 'express';
 import {  validatePassword, validateUsername } from '../middlewares/validateCredentials.js';
-import { login, signup } from '../controllers/authCtrl.js';
+import { login, signup, logout } from '../controllers/authCtrl.js';
 
 const router = express.Router();
 
@@ -11,6 +11,6 @@ router.post('/signup',validateUsername, validatePassword, signup);
 router.post('/login',validateUsername, login);
 
 // Logout route
-//router.post('/logout', logout);
+router.post('/logout', logout);
 
 export default router;

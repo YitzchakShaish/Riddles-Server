@@ -34,8 +34,14 @@ export async function login(req, res) {
         return res.status(403).json({ message: 'Wrong password' });
     }
 
-    const token = generateToken({ id: finded.playerId , role: finded.role });
+    const token = generateToken({ id: finded.playerId, role: finded.role });
     res.cookie('token', token, { httpOnly: true, });
 
-    res.json({ message: 'Login successful', token ,role: finded.role, name: finded.username, playerId: finded.playerId});
+    res.json({ message: 'Login successful', token, role: finded.role, name: finded.username, playerId: finded.playerId });
+}
+
+export function logout(req, res) {
+    const token = null;
+    res.clearCookie('token');
+    res.json({ message: 'Logged out successfully', token });
 }
